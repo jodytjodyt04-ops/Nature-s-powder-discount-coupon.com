@@ -7,140 +7,142 @@
 <title>Nature's Powder | Customer Coupon</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4faf5;
-    color:#17351f;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4faf5;
+  color:#17351f;
 }
 
 .header{
-    background:linear-gradient(135deg,#116b35,#26964c);
-    color:white;
-    text-align:center;
-    padding:30px 15px;
+  background:linear-gradient(135deg,#116b35,#26964c);
+  color:white;
+  text-align:center;
+  padding:30px 15px;
 }
 
-.header h1{
-    margin:0;
-    font-size:29px;
-}
-
-.header p{
-    margin-top:8px;
-}
+.header h1{ margin:0; font-size:29px; }
+.header p{ margin-top:8px; }
 
 .container{
-    max-width:520px;
-    margin:25px auto;
-    padding:15px;
+  max-width:520px;
+  margin:25px auto;
+  padding:15px;
 }
 
 .card{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
 }
 
-h2{
-    color:#176b35;
-}
+h2{ color:#176b35; }
 
 label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
+  display:block;
+  margin-top:15px;
+  font-weight:bold;
 }
 
 input{
-    width:100%;
-    padding:14px;
-    margin-top:7px;
-    border:1px solid #ccc;
-    border-radius:10px;
-    font-size:16px;
+  width:100%;
+  padding:14px;
+  margin-top:7px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:16px;
 }
 
 textarea{
-    width:100%;
-    min-height:90px;
-    padding:14px;
-    margin-top:7px;
-    border:1px solid #ccc;
-    border-radius:10px;
-    font-size:16px;
+  width:100%;
+  min-height:90px;
+  padding:14px;
+  margin-top:7px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:16px;
 }
 
 button{
-    width:100%;
-    margin-top:20px;
-    padding:15px;
-    border:0;
-    border-radius:10px;
-    background:#176b35;
-    color:white;
-    font-size:17px;
-    font-weight:bold;
+  width:100%;
+  margin-top:20px;
+  padding:15px;
+  border:0;
+  border-radius:10px;
+  background:#176b35;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .notice{
-    background:#fff8df;
-    padding:13px;
-    border-radius:10px;
-    margin-top:15px;
-    font-size:14px;
+  background:#fff8df;
+  padding:13px;
+  border-radius:10px;
+  margin-top:15px;
+  font-size:14px;
+}
+
+.qrinfo{
+  display:none;
+  background:#eaf6ff;
+  padding:13px;
+  border-radius:10px;
+  margin-top:15px;
+  font-size:14px;
+  border:1px solid #b7dcff;
 }
 
 .error{
-    display:none;
-    background:#ffe8e8;
-    color:#a00000;
-    padding:14px;
-    border-radius:10px;
-    margin-top:15px;
+  display:none;
+  background:#ffe8e8;
+  color:#a00000;
+  padding:14px;
+  border-radius:10px;
+  margin-top:15px;
 }
 
 .success{
-    display:none;
-    margin-top:20px;
-    background:#e9fff0;
-    border:2px solid #2c9c4b;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
+  display:none;
+  margin-top:20px;
+  background:#e9fff0;
+  border:2px solid #2c9c4b;
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
 }
 
 .coupon{
-    border:2px dashed #176b35;
-    padding:20px;
-    margin-top:15px;
-    border-radius:12px;
-    background:white;
+  border:2px dashed #176b35;
+  padding:20px;
+  margin-top:15px;
+  border-radius:12px;
+  background:white;
 }
 
 .couponCode{
-    font-size:27px;
-    font-weight:bold;
-    color:#176b35;
-    letter-spacing:2px;
-    margin:12px 0;
+  font-size:27px;
+  font-weight:bold;
+  color:#176b35;
+  letter-spacing:2px;
+  margin:12px 0;
+  word-break:break-word;
 }
 
 .safe{
-    font-weight:bold;
-    margin-top:15px;
+  font-weight:bold;
+  margin-top:15px;
 }
 
 .footer{
-    text-align:center;
-    padding:25px;
-    color:#666;
-    font-size:13px;
+  text-align:center;
+  padding:25px;
+  color:#666;
+  font-size:13px;
 }
 </style>
 </head>
@@ -148,223 +150,207 @@ button{
 <body>
 
 <div class="header">
-    <h1>🌿 Nature's Powder</h1>
-    <p>Customer Coupon</p>
+  <h1>Nature's Powder</h1>
+  <p>Customer Coupon</p>
 </div>
 
 <div class="container">
+  <div class="card">
 
-<div class="card">
+    <h2>Unlock Your Customer Coupon</h2>
 
-<h2>🎁 Unlock Your Customer Coupon</h2>
+    <p>
+      Your order contains a unique coupon QR.
+      Please enter the information below to verify your order.
+    </p>
 
-<p>
-Your order contains a unique coupon QR.
-Please enter the information below to verify your order.
-</p>
+    <div class="qrinfo" id="qrinfo"></div>
 
-<label>Your Name</label>
-<input id="name" type="text" autocomplete="name">
+    <label>Your Name</label>
+    <input id="name" type="text" autocomplete="name">
 
-<label>Mobile Number</label>
-<input id="mobile" type="tel" maxlength="10" autocomplete="tel">
+    <label>Mobile Number</label>
+    <input id="mobile" type="tel" maxlength="10" autocomplete="tel">
 
-<label>Address</label>
-<textarea id="address" autocomplete="street-address"></textarea>
+    <label>Address</label>
+    <textarea id="address" autocomplete="street-address"></textarea>
 
-<label>HSN Code</label>
-<input id="hsn" type="text" inputmode="numeric">
+    <label>HSN Code</label>
+    <input id="hsn" type="text" inputmode="numeric">
 
-<div class="notice">
-🔒 Your coupon is linked to your order and customer
-information. Do not share your QR or verification details.
-</div>
+    <div class="notice">
+      Your coupon is linked to your order and customer information.
+      Do not share your QR or verification details.
+    </div>
 
-<button onclick="claimCoupon()">
-VERIFY & GET COUPON
-</button>
+    <button id="btn" onclick="claimCoupon()">
+      VERIFY & GET COUPON
+    </button>
 
-<div class="error" id="error"></div>
+    <div class="error" id="error"></div>
 
-<div class="success" id="success">
+    <div class="success" id="success">
+      <h2>Coupon Generated</h2>
+      <p>Your coupon has been successfully generated.</p>
 
-<h2>🎉 Coupon Generated</h2>
+      <div class="coupon">
+        <div><b>YOUR COUPON</b></div>
+        <div class="couponCode" id="couponCode">--------</div>
+        <div id="couponValue"></div>
+      </div>
 
-<p>Your coupon has been successfully generated.</p>
+      <p class="safe">Keep this coupon safe and take a screenshot.</p>
+      <p>Present this coupon according to the terms provided with your next eligible order.</p>
+    </div>
 
-<div class="coupon">
-
-<div>
-<b>YOUR COUPON</b>
-</div>
-
-<div class="couponCode" id="couponCode">
---------
-</div>
-
-<div id="couponValue"></div>
-
-</div>
-
-<p class="safe">
-📸 Keep this coupon safe and take a screenshot.
-</p>
-
-<p>
-Present this coupon according to the terms provided
-with your next eligible order.
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </div>
 
 <div class="footer">
-Nature's Powder<br>
-Fruit & Vegetable Dehydration Powders
+  Nature's Powder<br>
+  Fruit & Vegetable Dehydration Powders
 </div>
 
 <script>
+/*
+  This version works without a backend.
+  It reads details (token/order/expiry/hsn) from the QR URL if present,
+  validates them, and generates a coupon locally.
+*/
 
-async function claimCoupon(){
+const params = new URLSearchParams(window.location.search);
 
-    const name =
-        document.getElementById("name").value.trim();
+// Support multiple QR styles:
+// 1) ?token=ABC
+// 2) ?order=NP-...&expiry=2026-...&hsn=...
+const qr = {
+  token:  params.get("token") || "",
+  order:  params.get("order") || "",
+  expiry: params.get("expiry") || "",
+  hsn:    params.get("hsn") || ""
+};
 
-    const mobile =
-        document.getElementById("mobile").value.trim();
-
-    const address =
-        document.getElementById("address").value.trim();
-
-    const hsn =
-        document.getElementById("hsn").value.trim();
-
-    const error =
-        document.getElementById("error");
-
-    const success =
-        document.getElementById("success");
-
-    error.style.display="none";
-    success.style.display="none";
-
-    if(!name || !mobile || !address || !hsn){
-
-        error.innerText =
-        "Please complete all required fields.";
-
-        error.style.display="block";
-
-        return;
-    }
-
-    if(!/^[6-9][0-9]{9}$/.test(mobile)){
-
-        error.innerText =
-        "Please enter a valid 10-digit mobile number.";
-
-        error.style.display="block";
-
-        return;
-    }
-
-    /*
-       IMPORTANT:
-
-       The customer does NOT decide the order ID.
-
-       It comes from the QR URL.
-
-       Example:
-
-       customer.html?token=ABC123...
-    */
-
-    const params =
-        new URLSearchParams(window.location.search);
-
-    const token =
-        params.get("token");
-
-    if(!token){
-
-        error.innerText =
-        "Invalid or missing order QR.";
-
-        error.style.display="block";
-
-        return;
-    }
-
-    try{
-
-        const response =
-            await fetch("/api/claim",{
-
-                method:"POST",
-
-                headers:{
-                    "Content-Type":
-                    "application/json"
-                },
-
-                body:JSON.stringify({
-
-                    token:token,
-                    name:name,
-                    mobile:mobile,
-                    address:address,
-                    hsn:hsn
-
-                })
-
-            });
-
-        const data =
-            await response.json();
-
-        if(!response.ok){
-
-            throw new Error(
-                data.message ||
-                "Verification failed."
-            );
-
-        }
-
-        document.getElementById(
-            "couponCode"
-        ).innerText = data.couponCode;
-
-        document.getElementById(
-            "couponValue"
-        ).innerText = data.message;
-
-        success.style.display="block";
-
-        /*
-        Disable form after successful redemption.
-        */
-
-        document.getElementById("name").disabled=true;
-        document.getElementById("mobile").disabled=true;
-        document.getElementById("address").disabled=true;
-        document.getElementById("hsn").disabled=true;
-
-    }catch(err){
-
-        error.innerText =
-            err.message ||
-            "Something went wrong.";
-
-        error.style.display="block";
-    }
-
+function maskToken(t){
+  if(!t) return "";
+  if(t.length <= 6) return t;
+  return t.slice(0,3) + "..." + t.slice(-3);
 }
 
+function isExpired(yyyy_mm_dd){
+  // expects "YYYY-MM-DD"
+  const d = new Date(yyyy_mm_dd + "T23:59:59");
+  if(Number.isNaN(d.getTime())) return false; // if invalid, ignore
+  return Date.now() > d.getTime();
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const qrinfo = document.getElementById("qrinfo");
+
+  if(qr.token || qr.order || qr.expiry || qr.hsn){
+    let html = "<b>QR Detected</b><br>";
+
+    if(qr.order)  html += "Order: " + qr.order + "<br>";
+    if(qr.token)  html += "Token: " + maskToken(qr.token) + "<br>";
+    if(qr.hsn)    html += "HSN (must match): " + qr.hsn + "<br>";
+    if(qr.expiry) html += "Expiry: " + qr.expiry + "<br>";
+
+    qrinfo.innerHTML = html;
+    qrinfo.style.display = "block";
+  } else {
+    // No QR params — still allow, but warn
+    qrinfo.innerHTML =
+      "<b>Note:</b> No QR details found in the link. You can still generate a coupon, " +
+      "but it may not be considered a verified QR coupon.";
+    qrinfo.style.display = "block";
+  }
+});
+
+async function sha256Hex(str){
+  if(!window.crypto || !crypto.subtle){
+    // fallback (not cryptographically strong) — just to avoid breaking
+    let x = 0;
+    for(let i=0;i<str.length;i++) x = (x * 31 + str.charCodeAt(i)) >>> 0;
+    return ("00000000" + x.toString(16)).slice(-8);
+  }
+
+  const enc = new TextEncoder().encode(str);
+  const buf = await crypto.subtle.digest("SHA-256", enc);
+  const arr = Array.from(new Uint8Array(buf));
+  return arr.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function claimCoupon(){
+  const name    = document.getElementById("name").value.trim();
+  const mobile  = document.getElementById("mobile").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const hsn     = document.getElementById("hsn").value.trim();
+
+  const error   = document.getElementById("error");
+  const success = document.getElementById("success");
+  const btn     = document.getElementById("btn");
+
+  error.style.display = "none";
+  success.style.display = "none";
+
+  if(!name || !mobile || !address || !hsn){
+    error.innerText = "Please complete all required fields.";
+    error.style.display = "block";
+    return;
+  }
+
+  if(!/^[6-9][0-9]{9}$/.test(mobile)){
+    error.innerText = "Please enter a valid 10-digit mobile number.";
+    error.style.display = "block";
+    return;
+  }
+
+  // If QR has expiry, enforce it
+  if(qr.expiry && isExpired(qr.expiry)){
+    error.innerText = "This QR coupon has expired.";
+    error.style.display = "block";
+    return;
+  }
+
+  // If QR has HSN, enforce match
+  if(qr.hsn && String(qr.hsn).trim() !== String(hsn).trim()){
+    error.innerText = "HSN does not match the QR/order.";
+    error.style.display = "block";
+    return;
+  }
+
+  btn.disabled = true;
+
+  // Create a local coupon code (deterministic from inputs)
+  const seed =
+    [
+      qr.token,
+      qr.order,
+      qr.expiry,
+      qr.hsn,
+      name,
+      mobile,
+      address,
+      hsn
+    ].join("|");
+
+  const hash = await sha256Hex(seed);
+  const coupon = "NP-" + hash.slice(0, 10).toUpperCase();
+
+  document.getElementById("couponCode").innerText = coupon;
+
+  document.getElementById("couponValue").innerText =
+    (qr.token || qr.order)
+      ? "Verified QR coupon generated."
+      : "Coupon generated (no QR token found in link).";
+
+  success.style.display = "block";
+
+  // Disable form after generation
+  document.getElementById("name").disabled = true;
+  document.getElementById("mobile").disabled = true;
+  document.getElementById("address").disabled = true;
+  document.getElementById("hsn").disabled = true;
+}
 </script>
 
 </body>
