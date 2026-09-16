@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Nature's Powder | Customer Coupon</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4faf5;
+    color:#17351f;
+}
+
+.header{
+    background:linear-gradient(135deg,#116b35,#26964c);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.header h1{
+    margin:0;
+    font-size:29px;
+}
+
+.header p{
+    margin-top:8px;
+}
+
+.container{
+    max-width:520px;
+    margin:25px auto;
+    padding:15px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+h2{
+    color:#176b35;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-top:7px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+textarea{
+    width:100%;
+    min-height:90px;
+    padding:14px;
+    margin-top:7px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:0;
+    border-radius:10px;
+    background:#176b35;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.notice{
+    background:#fff8df;
+    padding:13px;
+    border-radius:10px;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.error{
+    display:none;
+    background:#ffe8e8;
+    color:#a00000;
+    padding:14px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.success{
+    display:none;
+    margin-top:20px;
+    background:#e9fff0;
+    border:2px solid #2c9c4b;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+}
+
+.coupon{
+    border:2px dashed #176b35;
+    padding:20px;
+    margin-top:15px;
+    border-radius:12px;
+    background:white;
+}
+
+.couponCode{
+    font-size:27px;
+    font-weight:bold;
+    color:#176b35;
+    letter-spacing:2px;
+    margin:12px 0;
+}
+
+.safe{
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    color:#666;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🌿 Nature's Powder</h1>
+    <p>Customer Coupon</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🎁 Unlock Your Customer Coupon</h2>
+
+<p>
+Your order contains a unique coupon QR.
+Please enter the information below to verify your order.
+</p>
+
+<label>Your Name</label>
+<input id="name" type="text" autocomplete="name">
+
+<label>Mobile Number</label>
+<input id="mobile" type="tel" maxlength="10" autocomplete="tel">
+
+<label>Address</label>
+<textarea id="address" autocomplete="street-address"></textarea>
+
+<label>HSN Code</label>
+<input id="hsn" type="text" inputmode="numeric">
+
+<div class="notice">
+🔒 Your coupon is linked to your order and customer
+information. Do not share your QR or verification details.
+</div>
+
+<button onclick="claimCoupon()">
+VERIFY & GET COUPON
+</button>
+
+<div class="error" id="error"></div>
+
+<div class="success" id="success">
+
+<h2>🎉 Coupon Generated</h2>
+
+<p>Your coupon has been successfully generated.</p>
+
+<div class="coupon">
+
+<div>
+<b>YOUR COUPON</b>
+</div>
+
+<div class="couponCode" id="couponCode">
+--------
+</div>
+
+<div id="couponValue"></div>
+
+</div>
+
+<p class="safe">
+📸 Keep this coupon safe and take a screenshot.
+</p>
+
+<p>
+Present this coupon according to the terms provided
+with your next eligible order.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Nature's Powder<br>
+Fruit & Vegetable Dehydration Powders
+</div>
+
+<script>
+
+async function claimCoupon(){
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const mobile =
+        document.getElementById("mobile").value.trim();
+
+    const address =
+        document.getElementById("address").value.trim();
+
+    const hsn =
+        document.getElementById("hsn").value.trim();
+
+    const error =
+        document.getElementById("error");
+
+    const success =
+        document.getElementById("success");
+
+    error.style.display="none";
+    success.style.display="none";
+
+    if(!name || !mobile || !address || !hsn){
+
+        error.innerText =
+        "Please complete all required fields.";
+
+        error.style.display="block";
+
+        return;
+    }
+
+    if(!/^[6-9][0-9]{9}$/.test(mobile)){
+
+        error.innerText =
+        "Please enter a valid 10-digit mobile number.";
+
+        error.style.display="block";
+
+        return;
+    }
+
+    /*
+       IMPORTANT:
+
+       The customer does NOT decide the order ID.
+
+       It comes from the QR URL.
+
+       Example:
+
+       customer.html?token=ABC123...
+    */
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const token =
+        params.get("token");
+
+    if(!token){
+
+        error.innerText =
+        "Invalid or missing order QR.";
+
+        error.style.display="block";
+
+        return;
+    }
+
+    try{
+
+        const response =
+            await fetch("/api/claim",{
+
+                method:"POST",
+
+                headers:{
+                    "Content-Type":
+                    "application/json"
+                },
+
+                body:JSON.stringify({
+
+                    token:token,
+                    name:name,
+                    mobile:mobile,
+                    address:address,
+                    hsn:hsn
+
+                })
+
+            });
+
+        const data =
+            await response.json();
+
+        if(!response.ok){
+
+            throw new Error(
+                data.message ||
+                "Verification failed."
+            );
+
+        }
+
+        document.getElementById(
+            "couponCode"
+        ).innerText = data.couponCode;
+
+        document.getElementById(
+            "couponValue"
+        ).innerText = data.message;
+
+        success.style.display="block";
+
+        /*
+        Disable form after successful redemption.
+        */
+
+        document.getElementById("name").disabled=true;
+        document.getElementById("mobile").disabled=true;
+        document.getElementById("address").disabled=true;
+        document.getElementById("hsn").disabled=true;
+
+    }catch(err){
+
+        error.innerText =
+            err.message ||
+            "Something went wrong.";
+
+        error.style.display="block";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
